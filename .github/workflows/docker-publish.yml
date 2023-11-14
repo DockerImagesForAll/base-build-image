@@ -88,6 +88,7 @@ jobs:
           cache-to: type=gha,mode=max
   deployment:
     runs-on: ubuntu-latest
+    needs: build
     environment:
       name: sit
       url: https://github.com
