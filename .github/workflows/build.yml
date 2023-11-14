@@ -1,0 +1,20 @@
+name: Build Artifacts
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main", "feature/*" ]
+    tags: [ '*.*.*' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Build Things
+        run: |
+          echo "Building Things!"
