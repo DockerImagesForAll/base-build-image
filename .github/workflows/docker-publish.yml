@@ -61,6 +61,7 @@ jobs:
         run: |
           aws sts get-caller-identity
           awk 'BEGIN{for(v in ENVIRON) print v}' |grep AWS
+          echo "AWS_ECR_PASSWORD=$(aws ecr get-login-password)" >> $GITHUB_ENV
 
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
@@ -70,7 +71,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ env.AWS_ACCESS_KEY_ID }}
-          password: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          password: ${{ env.AWS_ECR_PASSWORD }}
           ecr: true
 
       # Extract metadata (tags, labels) for Docker
