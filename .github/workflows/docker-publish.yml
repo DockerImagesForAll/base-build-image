@@ -56,7 +56,11 @@ jobs:
           role-to-assume: arn:aws:iam::516716066505:role/sxmcv-bb-common-build-images
           aws-region: us-west-2
           output-credentials: true
-  
+
+      - name: Get Caller Identity
+        run: |
+          aws sts get-caller-identity
+          
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
       - name: Log into registry ${{ env.REGISTRY }}
