@@ -10,8 +10,8 @@ on:
   push:
     branches: [ "main" ]
     tags: [ '*.*.*' ]
-  pull_request:
-    branches: [ "main" ]
+#  pull_request:
+#    branches: [ "main" ]
 
 env:
   REGISTRY: 516716066505.dkr.ecr.us-west-2.amazonaws.com
