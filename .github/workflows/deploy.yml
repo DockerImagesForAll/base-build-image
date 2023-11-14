@@ -7,6 +7,10 @@ on:
     tags: [ '*.*.*' ]
 
 jobs:
+  setup:
+    name: Setup
+    run: |
+      echo "Setup Deploy!"
   deploy:
     runs-on: ubuntu-latest
     permissions:
