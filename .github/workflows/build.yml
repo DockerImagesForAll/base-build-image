@@ -18,7 +18,7 @@ jobs:
         run: |
           echo "Building Things!"
   deploy-from-develop:
-    if: ${{ contains(github.ref_name, "develop") }}
+    if: ${{ contains(github.ref_name, 'develop') }}
     runs-on: ubuntu-latest
     environment:
       name: sit
@@ -32,7 +32,7 @@ jobs:
         run: |
           echo "Deploying Things!"
   deploy-from-release:
-    if: ${{ contains(github.ref_name, "release") }}
+    if: ${{ contains(github.ref_name, 'release') }}
     runs-on: ubuntu-latest
     environment:
       name: staging
@@ -44,7 +44,7 @@ jobs:
         run: |
           echo "Deploying Things!"
   deploy-from-main:
-    if: ${{ contains(github.ref_name, "main") }}
+    if: ${{ contains(github.ref_name, 'main') }}
     runs-on: ubuntu-latest
     environment:
       name: prod
