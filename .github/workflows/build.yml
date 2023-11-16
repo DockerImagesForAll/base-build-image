@@ -17,46 +17,46 @@ jobs:
       - name: Build Things
         run: |
           echo "Building Things!"
-  deploy-from-develop:
-    if: ${{ contains(github.ref_name, 'develop') }}
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: sit
-      url: https://github.com
-    permissions:
-      id-token: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Deploy Things To SIT
-        run: |
-          echo "Deploying Things!"
-  deploy-from-release:
-    if: ${{ contains(github.ref_name, 'release') }}
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: staging
-      url: https://github.com
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Deploy Things To Stage
-        run: |
-          echo "Deploying Things!"
-  deploy-from-main:
-    if: ${{ contains(github.ref_name, 'main') }}
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: prod
-      url: https://github.com
-    permissions:
-      id-token: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Deploy Things To PROD
-        run: |
-          echo "Deploying Things!"
+#  deploy-from-develop:
+#    if: ${{ contains(github.ref_name, 'develop') }}
+#    needs: build
+#    runs-on: ubuntu-latest
+#    environment:
+#      name: sit
+#      url: https://github.com
+#    permissions:
+#      id-token: write
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
+#      - name: Deploy Things To SIT
+#        run: |
+#          echo "Deploying Things!"
+#  deploy-from-release:
+#    if: ${{ contains(github.ref_name, 'release') }}
+#    runs-on: ubuntu-latest
+#    needs: build
+#    environment:
+#      name: staging
+#      url: https://github.com
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
+#      - name: Deploy Things To Stage
+#        run: |
+#          echo "Deploying Things!"
+#  deploy-from-main:
+#    if: ${{ contains(github.ref_name, 'main') }}
+#    runs-on: ubuntu-latest
+#    needs: build
+#    environment:
+#      name: prod
+#      url: https://github.com
+#    permissions:
+#      id-token: write
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
+#      - name: Deploy Things To PROD
+#        run: |
+#          echo "Deploying Things!"
