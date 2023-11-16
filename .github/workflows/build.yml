@@ -19,6 +19,7 @@ jobs:
           echo "Building Things!"
   deploy-from-develop:
     if: ${{ contains(github.ref_name, 'develop') }}
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: sit
@@ -34,6 +35,7 @@ jobs:
   deploy-from-release:
     if: ${{ contains(github.ref_name, 'release') }}
     runs-on: ubuntu-latest
+    needs: build
     environment:
       name: staging
       url: https://github.com
@@ -46,6 +48,7 @@ jobs:
   deploy-from-main:
     if: ${{ contains(github.ref_name, 'main') }}
     runs-on: ubuntu-latest
+    needs: build
     environment:
       name: prod
       url: https://github.com
