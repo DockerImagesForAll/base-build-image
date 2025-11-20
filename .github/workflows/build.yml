@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Build Things
         run: |
           echo "Building Things!"
@@ -26,7 +26,7 @@ jobs:
 #      id-token: write
 #    steps:
 #      - name: Checkout repository
-#        uses: actions/checkout@v4
+#        uses: actions/checkout@v6
 #      - name: Deploy Things To SIT
 #        run: |
 #          echo "Deploying Things!"
@@ -39,7 +39,7 @@ jobs:
 #      url: https://github.com
 #    steps:
 #      - name: Checkout repository
-#        uses: actions/checkout@v4
+#        uses: actions/checkout@v6
 #      - name: Deploy Things To Stage
 #        run: |
 #          echo "Deploying Things!"
@@ -54,7 +54,7 @@ jobs:
 #      id-token: write
 #    steps:
 #      - name: Checkout repository
-#        uses: actions/checkout@v4
+#        uses: actions/checkout@v6
 #      - name: Deploy Things To PROD
 #        run: |
 #          echo "Deploying Things!"
